@@ -20,7 +20,7 @@ $ git clone http://github.com/apache/nifi
 $ cd nifi
 $ mvn clean install
 $ cd /tmp
-$ git clone http://github.com/prateek/nifi-parcel
+$ git clone http://github.com/schie/nifi-parcel
 $ cd nifi-parcel
 $ POINT_VERSION=5 VALIDATOR_DIR=/tmp/cm_ext ./build-parcel.sh /tmp/nifi/nifi-assembly/target/nifi-*-SNAPSHOT-bin.tar.gz
 $ VALIDATOR_DIR=/tmp/cm_ext ./build-csd.sh

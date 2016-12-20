@@ -45,8 +45,8 @@ cd ..
 
 for file in `ls $PARCEL_NAME/meta/**`
 do
-  sed -i "" "s/<VERSION-FULL>/$FULL_VERSION/g"     $file
-  sed -i "" "s/<VERSION-SHORT>/${SHORT_VERSION}/g" $file
+  sed -i -e "s/<VERSION-FULL>/$FULL_VERSION/g"     $file
+  sed -i -e "s/<VERSION-SHORT>/${SHORT_VERSION}/g" $file
 done
 
 # validate directory
@@ -57,11 +57,11 @@ java -jar $VALIDATOR_DIR/validator/target/validator.jar \
 export COPYFILE_DISABLE=true
 
 # create parcel
-tar zcvf ${PARCEL_NAME}-el6.parcel ${PARCEL_NAME}
+tar zcvf ${PARCEL_NAME}-el7.parcel ${PARCEL_NAME}
 
 # validate parcel
 java -jar $VALIDATOR_DIR/validator/target/validator.jar \
-  -f ${PARCEL_NAME}-el6.parcel
+  -f ${PARCEL_NAME}-el7.parcel
 
 # create manifest
 $VALIDATOR_DIR/make_manifest/make_manifest.py
